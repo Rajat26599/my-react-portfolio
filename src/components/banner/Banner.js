@@ -14,14 +14,14 @@ export const Banner = () => {
             <MyPicWrapper>
                 <MyPic src={myFormalPic}></MyPic>
             </MyPicWrapper>
-            <div className="banner_content">
+            <div>
                 <h5>This is me</h5>
                 <MyName>{upper('Rajat Saxena')}</MyName>
                 <p><i className="lnr lnr-bug"></i> &nbsp;&nbsp;&nbsp;&nbsp; Full-stack Developer &nbsp;&nbsp;&nbsp;&nbsp; <i className="lnr lnr-pie-chart"></i> &nbsp;&nbsp;&nbsp;&nbsp; Graphic Designer &nbsp;&nbsp;&nbsp;&nbsp; <i className="lnr lnr-code"></i> &nbsp;&nbsp;&nbsp;&nbsp; Software Enthusiast</p>
                 <p><i className="lnr lnr-star"></i> &nbsp;&nbsp;&nbsp;&nbsp; Founder of CODE &nbsp;&nbsp;&nbsp;&nbsp; <i className="lnr lnr-briefcase"></i> &nbsp;&nbsp;&nbsp;&nbsp; ABA (UI Developer) at Infosys</p>
                 <BannerButton>Discover Now</BannerButton>
-                <div className="upper-social">
-                  <IconList className="list">
+                <div>
+                  <IconList>
                     {
                         data.socialSites.map((item, index) => (
                             <IconListItem key={index}>
