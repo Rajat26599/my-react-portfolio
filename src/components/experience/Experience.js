@@ -1,12 +1,12 @@
 import { Heading } from "../common/heading/Heading"
-import { Body, CompanyLogo, CompanyLogoWrapper, ResponsibilitiesItem, Duration, ExperienceContent, ExperiencePanel, ExperienceWrapper, ExperiencesRow, ProfileName, ResponsibilitiesPanel, RoleName } from "./styles"
+import { Body, CompanyLogo, CompanyLogoWrapper, ResponsibilitiesItem, Duration, ExperienceContent, ExperiencePanel, ExperienceWrapper, ExperiencesRow, ProfileName, ResponsibilitiesPanel, RoleName, ExperiencesRowWrapper, ExperienceRowIconWrapper } from "./styles"
 import { data } from "./data"
 import { useState } from "react"
 import { Subheading } from "../common/subheading/Subheading"
 
 // FONTAWESOME
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faCheck } from "@fortawesome/free-solid-svg-icons"
+import { faCheck, faAnglesRight } from "@fortawesome/free-solid-svg-icons"
 import { Spacer } from "../common/spacer/Spacer"
 
 export const Experience = () => {
@@ -14,21 +14,26 @@ export const Experience = () => {
 
     const getExperienceRow = (item, index) => {
         return (
-            <ExperiencesRow key={index} active={selectedExperience===index} onClick={() => setSelectedExperience(index)}>
-                <CompanyLogoWrapper>
-                    <CompanyLogo src={item.logo.url} width={item.logo.width} alt={item.logo.alt}></CompanyLogo>
-                </CompanyLogoWrapper>
-                <ExperienceContent>
-                    <RoleName>
-                        <ProfileName>{item.profileName}</ProfileName>
-                        {/* &nbsp; 
-                        <At>at</At> 
-                        &nbsp; 
-                        <CompanyName>{item.companyName}</CompanyName> */}
-                    </RoleName>
-                    <Duration>{item.duration}</Duration>
-                </ExperienceContent>
-            </ExperiencesRow>
+            <ExperiencesRowWrapper>
+                <ExperiencesRow key={index} active={selectedExperience===index} onClick={() => setSelectedExperience(index)}>
+                    <CompanyLogoWrapper>
+                        <CompanyLogo src={item.logo.url} width={item.logo.width} alt={item.logo.alt}></CompanyLogo>
+                    </CompanyLogoWrapper>
+                    <ExperienceContent>
+                        <RoleName>
+                            <ProfileName>{item.profileName}</ProfileName>
+                            {/* &nbsp; 
+                            <At>at</At> 
+                            &nbsp; 
+                            <CompanyName>{item.companyName}</CompanyName> */}
+                        </RoleName>
+                        <Duration>{item.duration}</Duration>
+                    </ExperienceContent>
+                </ExperiencesRow>
+                <ExperienceRowIconWrapper active={selectedExperience===index}>
+                    <FontAwesomeIcon icon={faAnglesRight} />
+                </ExperienceRowIconWrapper>
+            </ExperiencesRowWrapper>
         )
     }
     

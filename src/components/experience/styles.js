@@ -11,22 +11,32 @@ export const Body = styled.div`
 `
 
 export const ExperiencePanel = styled.ul`
-    width: 45%;
+    width: 50%;
     margin-block-start: 0;
+`
+export const ExperiencesRowWrapper = styled.div`
+    display: flex;
+    margin-bottom: 1rem;
 `
 export const ExperiencesRow = styled.li`
     display: flex;
-    min-height: 5rem;
+    width: 90%;
+    min-height: 5.5rem;
     border-width: 2px;
     border-style: solid;
     border-color: ${(props) => props.active ? globalStylingSpecs.color.myBlue : globalStylingSpecs.color.myLightGray};
     border-radius: 0.5rem;
-    margin-bottom: 1rem;
     cursor: pointer;
 
     &:hover {
         border-color: ${globalStylingSpecs.color.myBlue};
     }
+`
+export const ExperienceRowIconWrapper = styled.div`
+    width: 10%;
+    display: ${props => props.active ? 'flex' : 'none'};
+    justify-content: center;
+    align-items: center;
 `
 export const CompanyLogoWrapper = styled.div`
     width: 20%;
@@ -60,7 +70,7 @@ export const Duration = styled.div`
     color: ${globalStylingSpecs.color.myGray};
 `
 export const ResponsibilitiesPanel = styled.div`
-    width: 45%;
+    width: 50%;
     height: 100%;
     border-width: 2px;
     border-style: solid;
