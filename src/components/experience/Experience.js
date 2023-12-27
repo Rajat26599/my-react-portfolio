@@ -7,7 +7,7 @@ import { Subheading } from "../common/subheading/Subheading"
 // FONTAWESOME
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCheck } from "@fortawesome/free-solid-svg-icons"
-import { globalStylingSpecs } from "../../util/global/stylingSpecs"
+import { Spacer } from "../common/spacer/Spacer"
 
 export const Experience = () => {
     const [ selectedExperience, setSelectedExperience ] = useState(0);
@@ -65,6 +65,8 @@ export const Experience = () => {
                 { (selectedExperience < data.workExperiences.length) && getResponsibilitiesPanel() }
             </Body>
             
+            <Spacer height={'4rem'}></Spacer>
+
             <Subheading>Positions of Responsibility</Subheading>
             <Body>
                 <ExperiencePanel>

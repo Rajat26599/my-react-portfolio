@@ -2,10 +2,7 @@ import styled from "styled-components";
 import { globalStylingSpecs } from "../../util/global/stylingSpecs";
 
 export const AboutWrapper = styled.div`
-    margin: 0 ${globalStylingSpecs.spacing.pageMargin};
-`
-export const AboutMyselfContent = styled.p`
-    text-align: center;
+    margin: ${globalStylingSpecs.spacing.pageMargin};
 `
 export const CardsWrapper = styled.div`
     display: flex;
