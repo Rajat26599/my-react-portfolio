@@ -1,10 +1,11 @@
 import styled from "styled-components";
+import { globalStylingSpecs } from "../../util/global/stylingSpecs";
 
 export const NavbarWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 7rem;
+    margin: 0 ${globalStylingSpecs.spacing.pageMargin};
     z-index: 99;
 `
 

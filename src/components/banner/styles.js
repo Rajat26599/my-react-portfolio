@@ -28,6 +28,7 @@ export const MyName = styled.h2`
 
 export const BannerButton = styled.a`
     padding: 0px 42px;
+    margin: 1rem 0;
     line-height: 50px;
     background-image: linear-gradient(to right, #8490ff 0%, #62bdfc 48%, #8490ff 100%);
     background-size: 200% auto;
@@ -51,7 +52,7 @@ export const IconList = styled.ul`
 export const IconListItem = styled.li`
     font-size: 1.2rem;
     list-style: none;
-    margin: 1rem 1.5rem 0 0;
+    margin-right: 1.5rem;
     opacity: 0.5;
 
     &:hover {
