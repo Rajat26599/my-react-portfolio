@@ -2,6 +2,7 @@ import styled from "styled-components"
 
 export const globalStylingSpecs = {
     device: {
+        extraLarge: '1200px',
         medium: '1024px',
         tablet: '768px',
         small: '480px',

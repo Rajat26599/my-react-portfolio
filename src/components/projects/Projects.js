@@ -6,7 +6,7 @@ import { Subheading } from "../common/subheading/Subheading"
 
 export const Projects = () => {
     return (
-        <ProjectWrapper>
+        <ProjectWrapper id='projects'>
             <Heading>Recent Projects</Heading>
             <Paragraph>The best way to learn a technology is to create projects in it. I've taken it very sincerely.</Paragraph>
             <ProjectCards>

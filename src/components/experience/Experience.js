@@ -57,7 +57,7 @@ export const Experience = () => {
     }
 
     return (
-        <ExperienceWrapper>
+        <ExperienceWrapper id='experience'>
             <Heading>Experience</Heading>
             <Body>
                 <ExperiencePanel>

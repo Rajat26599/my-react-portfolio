@@ -8,7 +8,7 @@ import { Spacer } from "../common/spacer/Spacer"
 
 export const About = () => {
     return (
-        <AboutWrapper>
+        <AboutWrapper id='about'>
             <Heading>About Myself</Heading>
             <Paragraph>I have been working on my profile as a Full-stack Web Developer lately. I’m eager to seek opportunities in softwares too. I'm skilled in Java/Spring Boot, Python/Django, React, Angular, C, Wordpress, IoT, databases and more. And I’m also an experienced Graphic Designer.</Paragraph>
             <CardsWrapper>

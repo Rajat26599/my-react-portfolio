@@ -8,7 +8,7 @@ import { globalStylingSpecs } from "../../util/global/stylingSpecs"
 
 export const Banner = () => {
     return (
-        <BannerWrapper>
+        <BannerWrapper id='banner'>
             <MyPicWrapper>
                 <MyPic src={myFormalPic}></MyPic>
             </MyPicWrapper>

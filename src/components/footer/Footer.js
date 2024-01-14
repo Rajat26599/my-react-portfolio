@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 export const Footer = () => {
     return (
-        <FooterWrapper>
+        <FooterWrapper id='footer'>
             <SocialSites iconColor={globalStylingSpecs.color.myLightGray} justifyIcons={'center'} />
             <Paragraph>
                 Copyright © All rights reserved | Made with
