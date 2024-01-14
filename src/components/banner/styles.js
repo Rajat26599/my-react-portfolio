@@ -1,24 +1,40 @@
 import styled from "styled-components";
 import bannerImage from './../../assets/img/home-banner.jpg';
+import { globalStylingSpecs } from "../../util/global/stylingSpecs";
 
 export const BannerWrapper = styled.div`
     background-image: url(${bannerImage});
     background-size: contain;
     display: flex;
     width: 100vw;
-    height: 100vh;
     padding-top: 120px;
     margin-top: -80px;
+
+    @media(max-width: ${globalStylingSpecs.device.tablet}) {
+        height: auto;
+    }
 `
 
 export const MyPicWrapper = styled.div`
     width: 50%;
     display: flex;
     justify-content: center;
+    align-items: flex-end;
+
+    @media (max-width: ${globalStylingSpecs.device.small}) {
+        display: none;
+    }
 `
 
 export const MyPic = styled.img`
-    transform: scale(0.8);
+    height: 30vw;
+`
+
+export const BannerContent = styled.div`
+    @media(max-width: ${globalStylingSpecs.device.small}) {
+        padding-left: ${globalStylingSpecs.spacing.pageMarginSmall};
+        padding-right: ${globalStylingSpecs.spacing.pageMarginSmall};
+    }
 `
 
 export const MyName = styled.h2`
@@ -43,19 +59,5 @@ export const BannerButton = styled.a`
     &:hover {
         background-position: right center;
         color: #fff;
-    }
-`
-export const IconList = styled.ul`
-    display: flex;
-    padding-inline-start: 0;
-`
-export const IconListItem = styled.li`
-    font-size: 1.2rem;
-    list-style: none;
-    margin-right: 1.5rem;
-    opacity: 0.5;
-
-    &:hover {
-        opacity: 0.9;
     }
 `

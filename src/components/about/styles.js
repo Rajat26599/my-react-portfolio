@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import { globalStylingSpecs } from "../../util/global/stylingSpecs";
+import { ComponentWrapper, globalStylingSpecs } from "../../util/global/stylingSpecs";
 
-export const AboutWrapper = styled.div`
-    margin: ${globalStylingSpecs.spacing.pageMargin};
-`
+export const AboutWrapper = styled(ComponentWrapper)``
+
 export const CardsWrapper = styled.div`
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
     justify-content: space-between;
 `
@@ -20,6 +20,10 @@ export const AboutCard = styled.div`
 
     &:hover {
         border-color: ${globalStylingSpecs.color.myBlue};
+    }
+
+    @media(max-width: ${globalStylingSpecs.device.small}) {
+        width: 40%;
     }
 `
 export const AboutCardIcon = styled.i`
@@ -40,6 +44,10 @@ export const AboutCardContent = styled.p`
 `
 export const Progressbars = styled.ul`
     width: 50%;
+
+    @media(max-width: ${globalStylingSpecs.device.small}) {
+        width: 80%;
+    }
 `
 
 export const ProgressbarWrapper = styled.li`

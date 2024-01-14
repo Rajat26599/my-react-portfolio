@@ -1,4 +1,11 @@
+import styled from "styled-components"
+
 export const globalStylingSpecs = {
+    device: {
+        medium: '1024px',
+        tablet: '768px',
+        small: '480px',
+    },
     font: {
         size: {
             lg: '1.2rem',
@@ -13,6 +20,15 @@ export const globalStylingSpecs = {
         myBlack: '#222'
     },
     spacing: {
-        pageMargin: '5rem'
+        pageMarginLarge: '5rem',
+        pageMarginSmall: '1rem',
     }
 }
+
+export const ComponentWrapper = styled.div`
+    margin: ${globalStylingSpecs.spacing.pageMarginLarge};
+
+    @media(max-width: ${globalStylingSpecs.device.small}) {
+        margin: ${globalStylingSpecs.spacing.pageMarginSmall};
+    }
+`

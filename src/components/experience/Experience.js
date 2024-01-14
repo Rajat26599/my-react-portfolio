@@ -14,8 +14,8 @@ export const Experience = () => {
 
     const getExperienceRow = (item, index) => {
         return (
-            <ExperiencesRowWrapper>
-                <ExperiencesRow key={index} active={selectedExperience===index} onClick={() => setSelectedExperience(index)}>
+            <ExperiencesRowWrapper key={index}>
+                <ExperiencesRow active={selectedExperience===index} onClick={() => setSelectedExperience(index)}>
                     <CompanyLogoWrapper>
                         <CompanyLogo src={item.logo.url} width={item.logo.width} alt={item.logo.alt}></CompanyLogo>
                     </CompanyLogoWrapper>
@@ -44,7 +44,7 @@ export const Experience = () => {
                 <ul>
                     {
                         ((selectedExperience < data.workExperiences.length) ? data.workExperiences[selectedExperience] : data.otherExperiences[selectedExperience - data.workExperiences.length]).responsibilities.map((item, index) => (
-                            <ResponsibilitiesItem>
+                            <ResponsibilitiesItem key={index}>
                                 <FontAwesomeIcon icon={faCheck} color='green' />
                                 &nbsp;
                                 <li key={index}>{item}</li>

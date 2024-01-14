@@ -1,9 +1,8 @@
 import styled from "styled-components";
-import { globalStylingSpecs } from "../../util/global/stylingSpecs";
+import { ComponentWrapper, globalStylingSpecs } from "../../util/global/stylingSpecs";
 
-export const ProjectWrapper = styled.div`
-    margin: ${globalStylingSpecs.spacing.pageMargin};
-`
+export const ProjectWrapper = styled(ComponentWrapper)``
+
 export const ProjectCards = styled.div`
     display: flex;
     width: 100%;
@@ -13,12 +12,21 @@ export const ProjectCards = styled.div`
 export const ProjectCard = styled.div`
     position: relative;
     width: 30%;
-    height: auto;
+    aspect-ratio: 1 / 1;
     border-radius: 1rem;
     margin-bottom: 2rem;
+    overflow: hidden;
+
+    @media(max-width: ${globalStylingSpecs.device.small}) {
+        width: 100%;
+        margin: 1rem auto;
+    }
 `
 export const ProjectImage = styled.img`
-
+    @media(max-width: ${globalStylingSpecs.device.small}) {
+        width: 100%;
+        height: 100%;
+    }
 `
 export const ProjectContent = styled.div`
     position: absolute;

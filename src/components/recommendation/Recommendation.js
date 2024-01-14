@@ -1,6 +1,6 @@
 import { Heading } from "../common/heading/Heading"
 import { Paragraph } from "../common/paragraph/Paragraph"
-import { AuthorPost, RecommendationCard, RecommendationCards, RecommendationText, RecommendationWrapper } from "./styles"
+import { AuthorDetails, AuthorPost, RecommendationCard, RecommendationCards, RecommendationText, RecommendationWrapper } from "./styles"
 import { data } from "./data"
 import { Subheading } from "../common/subheading/Subheading"
 
@@ -15,16 +15,18 @@ export const Recommendation = () => {
             <RecommendationCards>
                 {
                     data.recommendations.map((item, index) => (
-                        <RecommendationCard>
+                        <RecommendationCard key={index}>
                             <RecommendationText>{item.text}</RecommendationText>
-                            <Subheading>{item.author.name}</Subheading>
-                            <AuthorPost>{item.author.post}</AuthorPost>
-                            {
-                                [...Array(4)].map(() => (
-                                    <FontAwesomeIcon icon={faStar} color='#ffc000' />
-                                ))
-                            }
-                            <FontAwesomeIcon icon={faStarHalfStroke} color='#ffc000' />
+                            <AuthorDetails>
+                                <Subheading>{item.author.name}</Subheading>
+                                <AuthorPost>{item.author.post}</AuthorPost>
+                                {
+                                    [...Array(4)].map((item, index) => (
+                                        <FontAwesomeIcon key={index} icon={faStar} color='#ffc000' />
+                                    ))
+                                }
+                                <FontAwesomeIcon icon={faStarHalfStroke} color='#ffc000' />
+                            </AuthorDetails>
                         </RecommendationCard>
                     ))
                 }

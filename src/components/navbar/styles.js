@@ -1,12 +1,17 @@
 import styled from "styled-components";
-import { globalStylingSpecs } from "../../util/global/stylingSpecs";
+import { ComponentWrapper, globalStylingSpecs } from "../../util/global/stylingSpecs";
 
-export const NavbarWrapper = styled.div`
+export const NavbarWrapper = styled(ComponentWrapper)`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 0 ${globalStylingSpecs.spacing.pageMargin};
-    z-index: 99;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    @media(max-width: ${globalStylingSpecs.device.small}) {
+        margin-left: ${globalStylingSpecs.spacing.pageMarginSmall};
+        margin-right: ${globalStylingSpecs.spacing.pageMarginSmall};
+    }
 `
 
 export const NavList = styled.ul`

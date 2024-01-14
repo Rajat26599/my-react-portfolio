@@ -20,7 +20,7 @@ export const Navbar = () => {
                 <li className="nav-item"><a className="nav-link" href="#project_area">Projects</a></li>
                 <li className="nav-item"><a className="nav-link" href="https://silvercyberblog.pythonanywhere.com">Blog</a></li>
                 <li className="nav-item"><a className="nav-link" href="#contact_area">Contact</a></li> */}
-              </NavList>
+            </NavList>
         </NavbarWrapper>
     )
 }
