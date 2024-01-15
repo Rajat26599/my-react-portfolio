@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import bannerImage from './../../assets/img/home-banner.jpg';
 import { globalStylingSpecs } from "../../util/global/stylingSpecs";
+import { fadeIn } from "../../util/animations/fadeIn";
 
 export const BannerWrapper = styled.div`
     background-image: url(${bannerImage});
@@ -28,6 +29,7 @@ export const MyPicWrapper = styled.div`
 
 export const MyPic = styled.img`
     height: 30vw;
+    animation: ${fadeIn} 1s linear;
 `
 
 export const BannerContent = styled.div`
@@ -40,24 +42,4 @@ export const BannerContent = styled.div`
 export const MyName = styled.h2`
     font-size: 3rem;
     opacity: 0.9;
-`
-
-export const BannerButton = styled.a`
-    padding: 0px 42px;
-    margin: 1rem 0;
-    line-height: 50px;
-    background-image: linear-gradient(to right, #8490ff 0%, #62bdfc 48%, #8490ff 100%);
-    background-size: 200% auto;
-    color: #fff;
-    display: inline-block;
-    border-radius: 5px;
-    font-size: 13px;
-    font-family: "Roboto", sans-serif;
-    font-weight: 500;
-    transition: all 300ms linear 0s;
-
-    &:hover {
-        background-position: right center;
-        color: #fff;
-    }
 `

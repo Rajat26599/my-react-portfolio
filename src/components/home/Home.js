@@ -7,6 +7,7 @@ import { Recommendation } from "../recommendation/Recommendation"
 import { HomeWrapper } from "./styles"
 
 export const Home = () => {
+
     return (
         <HomeWrapper>
             <Banner />
