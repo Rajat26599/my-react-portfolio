@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ComponentWrapper, globalStylingSpecs } from "../../util/global/stylingSpecs";
+import { globalStylingSpecs } from "../../util/global/stylingSpecs";
 
 export const NavbarWrapper = styled.div`
     margin-top: 0;

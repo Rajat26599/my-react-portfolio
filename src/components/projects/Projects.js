@@ -13,7 +13,7 @@ export const Projects = () => {
                 {
                     data.projects.map((item, index) => (
                         <ProjectCard key={index}>
-                            <a href={item.link} target="_blank">
+                            <a href={item.link} target="_blank" rel="noreferrer">
                                 <ProjectContent>
                                     <Subheading>{item.title}</Subheading>
                                     <Subtitle>{item.subtitle}</Subtitle>
