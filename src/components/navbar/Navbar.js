@@ -28,7 +28,7 @@ export const Navbar = () => {
                         </NavListItem>
                     ))
                 }
-                <a href='https://drive.google.com/file/d/19pesyNXeKUGFgzLjNcOHtbU5uxtPNung/view?usp=sharing' target='_blank'><Button>Get Resume</Button></a>
+                <a href='https://drive.google.com/file/d/19pesyNXeKUGFgzLjNcOHtbU5uxtPNung/view?usp=sharing' target='_blank' rel="noreferrer"><Button>Get Resume</Button></a>
             </>
         )
     }
