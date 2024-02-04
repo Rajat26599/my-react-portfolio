@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { ComponentWrapper, globalStylingSpecs } from "../../util/global/stylingSpecs";
 import { fadeIn } from "../../util/animations/fadeIn";
 
