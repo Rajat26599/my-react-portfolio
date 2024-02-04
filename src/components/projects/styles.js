@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { ComponentWrapper, globalStylingSpecs } from "../../util/global/stylingSpecs";
 import { fadeIn } from "../../util/animations/fadeIn";
 
@@ -17,7 +17,10 @@ export const ProjectCard = styled.div`
     border-radius: 1rem;
     margin-bottom: 2rem;
     overflow: hidden;
-    animation: ${fadeIn} 1s linear;
+    ${props => props.$inView ? 
+        css`animation: ${fadeIn} 1s ease-in-out;`
+        : css`opacity: 0;`
+    }
 
     @media(max-width: ${globalStylingSpecs.device.small}) {
         width: 100%;
