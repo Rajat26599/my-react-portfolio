@@ -1,4 +1,4 @@
-import { BannerWrapper, MyPic, MyPicWrapper, MyName, BannerContent, ButtonWrapper } from "./styles"
+import { BannerWrapper, MyPic, MyPicWrapper, MyName, BannerContent, ButtonWrapper, SocialSitesContainer } from "./styles"
 import myFormalPic from './../../assets/img/home-left-1.png'
 import '../../../node_modules/linearicons/dist/web-font/style.css'
 
@@ -21,9 +21,9 @@ export const Banner = () => {
                 <ButtonWrapper>
                     <Button>Discover Now</Button>
                 </ButtonWrapper>
-                <div>
+                <SocialSitesContainer>
                     <SocialSites iconColor={globalStylingSpecs.color.myGray} />
-                </div>
+                </SocialSitesContainer>
             </BannerContent>
         </BannerWrapper>
     )
