@@ -19,7 +19,9 @@ export const Banner = () => {
                 <p><i className="lnr lnr-bug"></i> &nbsp;&nbsp;&nbsp;&nbsp; Full-stack Developer &nbsp;&nbsp;&nbsp;&nbsp; <i className="lnr lnr-pie-chart"></i> &nbsp;&nbsp;&nbsp;&nbsp; Graphic Designer &nbsp;&nbsp;&nbsp;&nbsp; <i className="lnr lnr-code"></i> &nbsp;&nbsp;&nbsp;&nbsp; Software Enthusiast</p>
                 <p><i className="lnr lnr-star"></i> &nbsp;&nbsp;&nbsp;&nbsp; Founder of CODE &nbsp;&nbsp;&nbsp;&nbsp; <i className="lnr lnr-briefcase"></i> &nbsp;&nbsp;&nbsp;&nbsp; ABA (UI Developer) at Infosys</p>
                 <ButtonWrapper>
-                    <Button>Discover Now</Button>
+                    <a href='#experience'>
+                        <Button>Discover Now</Button>
+                    </a>
                 </ButtonWrapper>
                 <SocialSitesContainer>
                     <SocialSites iconColor={globalStylingSpecs.color.myGray} />

@@ -44,10 +44,12 @@ export const BannerContent = styled.div`
 export const MyName = styled.h2`
     font-size: 3rem;
     opacity: 0.9;
+    animation: ${fadeIn} 1s ease;
 `
 
 export const ButtonWrapper = styled.div`
-    margin: 1rem 0;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
 `
 
 const bounceAnimationStyles = (i) => {
@@ -56,6 +58,10 @@ const bounceAnimationStyles = (i) => {
             ${IconListItem}:nth-child(${i}) {
                 animation: ${css`${bounce} ${i*0.2}s ease-in-out;`}
                 animation-delay: ${i===0 ? 0 : ((i-1)*0.2 - 0.1)}s;
+
+                &:hover {
+                    transform: scale(1.5);
+                }
             }
         `
         )
@@ -69,6 +75,6 @@ export const SocialSitesContainer = styled.div`
         padding-bottom: 1rem;
     }
     
-    ${() => [...Array(5)].map((item, index) => bounceAnimationStyles(index+1))}
+    ${() => [...Array(5)].map((_, index) => bounceAnimationStyles(index+1))}
     
 `
