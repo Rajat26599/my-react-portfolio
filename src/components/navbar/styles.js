@@ -6,13 +6,18 @@ export const NavbarWrapper = styled.div`
     margin-bottom: 0;
     padding-top: 1rem;
     padding-bottom: 1rem;
+
+    @media(max-width: ${globalStylingSpecs.device.medium}) and (min-width: ${globalStylingSpecs.device.small}) {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
 `
 
 export const MainNavbar = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 2rem ${globalStylingSpecs.spacing.pageMarginLarge};
+    margin: 0 ${globalStylingSpecs.spacing.pageMarginLarge};
 
     @media(max-width: ${globalStylingSpecs.device.small}) {
         margin: ${globalStylingSpecs.spacing.pageMarginSmall};
@@ -22,6 +27,8 @@ export const MainNavbar = styled.div`
 export const NavList = styled.ul`
     display: flex;
     align-items: center;
+    margin-block-start: 0;
+    margin-block-end: 0;
 `
 
 export const NavListItem = styled.li`
