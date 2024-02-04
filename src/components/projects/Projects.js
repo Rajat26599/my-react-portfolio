@@ -1,6 +1,6 @@
 import { Heading } from "../common/heading/Heading"
 import { Paragraph } from "../common/paragraph/Paragraph"
-import { ProjectCard, ProjectCards, ProjectContent, ProjectImage, ProjectWrapper, Subtitle } from "./styles"
+import { ProjectCard, ProjectCards, ProjectContent, ProjectImage, ProjectWrapper } from "./styles"
 import { data } from "./data"
 import { Subheading } from "../common/subheading/Subheading"
 import { createRef, useEffect, useRef, useState } from "react"
@@ -64,7 +64,7 @@ export const Projects = () => {
                             <a href={item.link} target="_blank" rel="noreferrer">
                                 <ProjectContent>
                                     <Subheading>{item.title}</Subheading>
-                                    <Subtitle>{item.subtitle}</Subtitle>
+                                    {/* <Subtitle>{item.subtitle}</Subtitle> */}
                                 </ProjectContent>
                                 <ProjectImage src={item.img}></ProjectImage>
                             </a>

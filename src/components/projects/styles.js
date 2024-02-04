@@ -4,10 +4,11 @@ import { fadeIn } from "../../util/animations/fadeIn";
 
 export const ProjectWrapper = styled(ComponentWrapper)``
 
+//  unlike space-evenly space-around provides half sized spacing around the edges
 export const ProjectCards = styled.div`
     display: flex;
     width: 100%;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
 `
 export const ProjectCard = styled.div`
@@ -22,16 +23,23 @@ export const ProjectCard = styled.div`
         : css`opacity: 0;`
     }
 
+    &:hover {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    @media(max-width: ${globalStylingSpecs.device.medium}) {
+        width: 40%;
+        margin: 1rem auto;
+    }
+
     @media(max-width: ${globalStylingSpecs.device.small}) {
         width: 100%;
         margin: 1rem auto;
     }
 `
 export const ProjectImage = styled.img`
-    @media(max-width: ${globalStylingSpecs.device.small}) {
-        width: 100%;
-        height: 100%;
-    }
+    width: 100%;
+    height: 100%;
 `
 export const ProjectContent = styled.div`
     position: absolute;
