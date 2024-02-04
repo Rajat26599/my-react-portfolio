@@ -46,6 +46,10 @@ export const MyName = styled.h2`
     opacity: 0.9;
 `
 
+export const ButtonWrapper = styled.div`
+    margin: 1rem 0;
+`
+
 const bounceAnimationStyles = (i) => {
     return (
         css`

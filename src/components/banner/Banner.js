@@ -1,4 +1,4 @@
-import { BannerWrapper, MyPic, MyPicWrapper, MyName, BannerContent } from "./styles"
+import { BannerWrapper, MyPic, MyPicWrapper, MyName, BannerContent, ButtonWrapper } from "./styles"
 import myFormalPic from './../../assets/img/home-left-1.png'
 import '../../../node_modules/linearicons/dist/web-font/style.css'
 
@@ -18,7 +18,9 @@ export const Banner = () => {
                 <MyName>{upper('Rajat Saxena')}</MyName>
                 <p><i className="lnr lnr-bug"></i> &nbsp;&nbsp;&nbsp;&nbsp; Full-stack Developer &nbsp;&nbsp;&nbsp;&nbsp; <i className="lnr lnr-pie-chart"></i> &nbsp;&nbsp;&nbsp;&nbsp; Graphic Designer &nbsp;&nbsp;&nbsp;&nbsp; <i className="lnr lnr-code"></i> &nbsp;&nbsp;&nbsp;&nbsp; Software Enthusiast</p>
                 <p><i className="lnr lnr-star"></i> &nbsp;&nbsp;&nbsp;&nbsp; Founder of CODE &nbsp;&nbsp;&nbsp;&nbsp; <i className="lnr lnr-briefcase"></i> &nbsp;&nbsp;&nbsp;&nbsp; ABA (UI Developer) at Infosys</p>
-                <Button>Discover Now</Button>
+                <ButtonWrapper>
+                    <Button>Discover Now</Button>
+                </ButtonWrapper>
                 <div>
                     <SocialSites iconColor={globalStylingSpecs.color.myGray} />
                 </div>
