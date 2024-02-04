@@ -17,7 +17,7 @@ export const ProjectCard = styled.div`
     border-radius: 1rem;
     margin-bottom: 2rem;
     overflow: hidden;
-    ${props => props.inView ? 
+    ${props => props.$inView ? 
         css`animation: ${fadeIn} 1s ease-in-out;`
         : css`opacity: 0;`
     }

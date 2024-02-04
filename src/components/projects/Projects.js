@@ -16,30 +16,37 @@ export const Projects = () => {
         ProjectCardRef.current = Array(data.projects.length)
           .fill()
           //making every element of ProjectCardRef.current array to be a reference placeholder
-          .map((_, i) => ProjectCardRef.current[i] || createRef());
+          .map((_, i) => {
+            return {
+                element: ProjectCardRef.current[i] || createRef(), 
+                inView: false
+            } 
+        });
     }
 
     // callback will execute for element's entry and exit
     const callback = (entries) => {
-        var arr = []
-        entries.forEach(entry => arr.push(entry.isIntersecting))
-        setInView(arr)
+        entries.forEach(entry => {
+            const obj = ProjectCardRef.current.filter(ref => ref.element === entry.target)
+            if(obj) obj[0].inView = entry.isIntersecting;
+        })
+        setInView(Array(ProjectCardRef.current.length).fill().map((_, i) => ProjectCardRef.current[i].inView))
     }
-    // options for intersection observer
-    const options = {
-        rootMargin: '0px',
-        // when 10% of the element comes into view, callback will be triggered
-        threshold: 0.1
-    }
+
     useEffect(() => {
-        const observer = new IntersectionObserver(callback, options)
+        // first parameter is a callback function which gets triggered on every threshold hit
+        // second parameter is options object
+        // when 10% of the element comes into view, callback will be triggered
+        const observer = new IntersectionObserver(callback, { threshold: 0.1 })
+
         // observing each reference element for each project card
         data.projects.forEach((_, i) => {
-            if(ProjectCardRef.current) observer.observe(ProjectCardRef.current[i])
+            if(ProjectCardRef.current) observer.observe(ProjectCardRef.current[i].element)
         })
+    
         // unmounting observer
         return () => observer.disconnect()
-    }, [ProjectCardRef, options])
+    }, [ProjectCardRef])
 
     return (
         <ProjectWrapper id='projects'>
@@ -51,8 +58,8 @@ export const Projects = () => {
                         <ProjectCard 
                             key={index} 
                             // relocate actual refereces to ProjectCard.Ref.current array index wise
-                            ref={el => ProjectCardRef.current[index] = el}
-                            inView={inView[index]}
+                            ref={el => ProjectCardRef.current[index] ? ProjectCardRef.current[index].element = el : null}
+                            $inView={inView[index]}
                             >
                             <a href={item.link} target="_blank" rel="noreferrer">
                                 <ProjectContent>

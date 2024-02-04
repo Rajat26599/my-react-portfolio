@@ -51,7 +51,7 @@ const bounceAnimationStyles = (i) => {
         css`
             ${IconListItem}:nth-child(${i}) {
                 animation: ${css`${bounce} ${i*0.2}s ease-in-out;`}
-                animation-delay: ${i==0 ? 0 : ((i-1)*0.2 - 0.1)}s;
+                animation-delay: ${i===0 ? 0 : ((i-1)*0.2 - 0.1)}s;
             }
         `
         )
