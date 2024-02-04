@@ -68,8 +68,11 @@ export const ProgressbarBox = styled.div`
     background-color: transparent;
 `
 export const ProgressFilling = styled.div`
-    width: ${props => props.width}%;
+    width: ${props => props.$inView ? props.width : 0}%;
     height: 0.5rem;
     background-color: #007bff;
     border-radius: 1rem;
+    transition-duration: 2s;
+    transition-property: width;
+    transition-timing-function: ease;
 `
