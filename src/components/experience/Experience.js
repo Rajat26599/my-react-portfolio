@@ -39,7 +39,9 @@ export const Experience = () => {
     
     const getResponsibilitiesPanel = () => {
         return (
-            <ResponsibilitiesPanel>
+            // by adding a key react will re-render ResponsibilitiesPanel when selectedExperience changes
+            // this let the fadeIn animation take effect otherwise it would have only happened once in the beginning
+            <ResponsibilitiesPanel key={selectedExperience}>
                 <Subheading>Roles</Subheading>
                 <ul>
                     {
