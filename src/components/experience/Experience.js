@@ -1,7 +1,7 @@
 import { Heading } from "../common/heading/Heading"
 import { Body, CompanyLogo, CompanyLogoWrapper, ResponsibilitiesItem, Duration, ExperienceContent, ExperiencePanel, ExperienceWrapper, ExperiencesRow, ProfileName, ResponsibilitiesPanel, RoleName, ExperiencesRowWrapper, ExperienceRowIconWrapper } from "./styles"
 import { data } from "./data"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Subheading } from "../common/subheading/Subheading"
 
 // FONTAWESOME
@@ -11,6 +11,7 @@ import { Spacer } from "../common/spacer/Spacer"
 
 export const Experience = () => {
     const [ selectedExperience, setSelectedExperience ] = useState(0);
+    const [ triggerResponsibilitiesPanelAnimation, setTriggerResponsibilitiesPanelAnimation] = useState(false)
 
     const getExperienceRow = (item, index) => {
         return (
@@ -36,10 +37,16 @@ export const Experience = () => {
             </ExperiencesRowWrapper>
         )
     }
+
+    useEffect(() => {
+        setTriggerResponsibilitiesPanelAnimation(true)
+    }, [selectedExperience])
     
     const getResponsibilitiesPanel = () => {
         return (
-            <ResponsibilitiesPanel>
+            // by adding a key react will re-render ResponsibilitiesPanel when selectedExperience changes
+            // this let the fadeIn animation take effect otherwise it would have only happened once in the beginning
+            <ResponsibilitiesPanel key={selectedExperience}>
                 <Subheading>Roles</Subheading>
                 <ul>
                     {

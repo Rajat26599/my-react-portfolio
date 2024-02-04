@@ -1,5 +1,6 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { ComponentWrapper, globalStylingSpecs } from "../../util/global/stylingSpecs";
+import { fadeIn } from "../../util/animations/fadeIn";
 
 export const ExperienceWrapper = styled(ComponentWrapper)``
 
@@ -84,6 +85,7 @@ export const ResponsibilitiesPanel = styled.div`
     border-color: ${globalStylingSpecs.color.myGray};
     border-radius: 0.5rem;
     padding: 1rem;
+    animation: ${fadeIn} 1s ease;
 
     @media(max-width: ${globalStylingSpecs.device.small}) {
         width: 100%;
