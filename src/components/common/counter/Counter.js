@@ -39,7 +39,8 @@ export const Counter = (props) => {
             // if the component goes out of view reset counter
             setCount(props.from)
         }
-    })
+    }, [inView, count, getChangeValue, getSpeed, props.direction, props.from, props.to])
+
     return (
         <span ref={counterRef}>{Math.ceil(count)}</span>
     )
