@@ -6,6 +6,7 @@ import { Subheading } from "../common/subheading/Subheading"
 import { Paragraph } from "../common/paragraph/Paragraph"
 import { Spacer } from "../common/spacer/Spacer"
 import { useEffect, useRef, useState } from "react"
+import { Counter } from "../common/counter/Counter"
 
 export const About = () => {
     const progressRef = useRef([])
@@ -24,10 +25,6 @@ export const About = () => {
         // unmounting observer
         return () => observer.disconnect()
     })
-    
-    useEffect(() => {
-        console.log(inView)
-    }, [inView])
 
     return (
         <AboutWrapper id='about'>
@@ -38,7 +35,7 @@ export const About = () => {
                     data.stats.map((item, index) => (
                         <AboutCard key={index}>
                             <AboutCardIcon className={item.iconClass}></AboutCardIcon> 
-                            <Number>{item.number}</Number>
+                            <Number><Counter to={item.number}></Counter>{item.additional}</Number>
                             <AboutCardContent>{item.text}</AboutCardContent>
                         </AboutCard>
                     ))

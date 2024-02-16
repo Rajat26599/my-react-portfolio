@@ -7,17 +7,20 @@ export const data = {
         },
         {
             iconClass: 'lnr lnr-code',
-            number: '250+',
+            number: 250,
+            additional: '+',
             text: 'Questions Solved on LeetCode'
         },
         {
             iconClass: 'lnr lnr-book',
-            number: '30+',
+            number: 30,
+            additional: '+',
             text: 'Projects'
         },
         {
             iconClass: 'lnr lnr-license',
-            number: '20+',
+            number: 20,
+            additional: '+',
             text: 'Cirtifications'
         }
     ],
