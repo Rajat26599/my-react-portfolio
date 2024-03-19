@@ -60,6 +60,7 @@ export const Projects = () => {
                             // relocate actual refereces to ProjectCard.Ref.current array index wise
                             ref={el => ProjectCardRef.current[index] ? ProjectCardRef.current[index].element = el : null}
                             $inView={inView[index]}
+                            $backgroundColor={item.backgroundColor}
                             >
                             <a href={item.link} target="_blank" rel="noreferrer">
                                 <ProjectContent>
