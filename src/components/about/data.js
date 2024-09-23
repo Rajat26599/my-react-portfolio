@@ -7,9 +7,9 @@ export const data = {
         },
         {
             iconClass: 'lnr lnr-code',
-            number: 250,
+            number: 450,
             additional: '+',
-            text: 'Questions Solved on LeetCode'
+            text: 'Problems Solved on LeetCode'
         },
         {
             iconClass: 'lnr lnr-book',

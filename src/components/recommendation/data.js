@@ -4,7 +4,7 @@ export const data = {
             text: 'Rajat is a passionate and dedicated WordPress developer. The current KhushiSeYoga website has been designed by him and he was able to understand what was needed as a yoga startup. He does his homework to research the best designs, themes, and the structure of the pages. He is proactive and always ready for new tasks whichever is required by Team.Thanks to his efforts we have a stable website that is spreading happiness through Yoga and connecting yogis.',
             author: {
                 name: 'SUNDER BISHNOI',
-                post: 'Founder #KhushiSeYoga'
+                post: 'Founder, KhushiSeYoga'
             }
         },
         {
@@ -13,7 +13,16 @@ export const data = {
 Thanks a lot, Rajat! You made the internship journey relatively smooth for me.`,
             author: {
                 name: 'KIRTEE JAMDADE',
-                post: 'Vice Precident at Robotaract Club, WCE'
+                post: 'Software Engineer Associate, Siemens DISW'
+            }
+        },
+        {
+            text: `Rajat has strong expertise in building cross-platform mobile apps, a solid understanding of JavaScript, and proficiency in integrating APIs and managing state with Redux. His attention to detail, problem-solving skills, and ability to meet deadlines make him an asset to any development team.     
+        
+        He also excel in writing clean, maintainable code and collaborating effectively with teams.`,
+            author: {
+                name: 'JANAKI DEHANKAR',
+                post: 'Senior Frontend Developer, Pivotree'
             }
         },
     ]
