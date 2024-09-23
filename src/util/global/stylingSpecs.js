@@ -1,6 +1,11 @@
 import styled from "styled-components"
 
 export const globalStylingSpecs = {
+    theme: {
+        light: '#fff',
+        midnight: '#222255',
+        black: '#000',
+    },
     device: {
         extraLarge: '1200px',
         medium: '1024px',

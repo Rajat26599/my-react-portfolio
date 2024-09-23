@@ -29,7 +29,7 @@ export const data = {
         {
             title: 'K. K. Public School',
             subtitle: 'School Website',
-            link: 'https://kkpublic.netlify.app/',
+            link: 'https://kkpublic.onrender.com/',
             img: kkpublic
         },
         {

@@ -15,6 +15,7 @@ export const SocialSites = (props) => {
                     <IconListItem key={index}>
                         <a href={item.url}>
                             <FontAwesomeIcon 
+                                title={item.platform}
                                 key={index}
                                 icon={item.icon} 
                                 color={ index === mouseOver ? item.onHoverColor : props.iconColor} 
