@@ -5,8 +5,27 @@ import { data } from "./data"
 import { Subheading } from "../common/subheading/Subheading"
 import { Paragraph } from "../common/paragraph/Paragraph"
 import { Spacer } from "../common/spacer/Spacer"
+import { useEffect, useRef, useState } from "react"
+import { Counter } from "../common/counter/Counter"
 
 export const About = () => {
+    const progressRef = useRef([])
+    const [inView, setInView] = useState(null)
+    
+    const callback = (entries) => {
+        setInView(entries[0].isIntersecting)
+    }
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(callback, { threshold: 0.1 })
+
+        // observing each reference element
+        if(progressRef.current) observer.observe(progressRef.current)
+    
+        // unmounting observer
+        return () => observer.disconnect()
+    })
+
     return (
         <AboutWrapper id='about'>
             <Heading>About Myself</Heading>
@@ -16,7 +35,7 @@ export const About = () => {
                     data.stats.map((item, index) => (
                         <AboutCard key={index}>
                             <AboutCardIcon className={item.iconClass}></AboutCardIcon> 
-                            <Number>{item.number}</Number>
+                            <Number><Counter to={item.number}></Counter>{item.additional}</Number>
                             <AboutCardContent>{item.text}</AboutCardContent>
                         </AboutCard>
                     ))
@@ -24,13 +43,13 @@ export const About = () => {
             </CardsWrapper>
             <Spacer height={'4rem'}></Spacer>
             <Subheading>Tools Expertness</Subheading>
-            <Progressbars>
+            <Progressbars ref={progressRef}>
                 {
                     data.skills.map((item, index) => (
                         <ProgressbarWrapper key={index}>
                             <TechName>{item.techName} &nbsp;&nbsp; {item.width}%</TechName>
                             <ProgressbarBox>
-                                <ProgressFilling width={item.width}></ProgressFilling>
+                                <ProgressFilling width={item.width} $inView={inView}></ProgressFilling>
                             </ProgressbarBox>
                         </ProgressbarWrapper>
                     ))

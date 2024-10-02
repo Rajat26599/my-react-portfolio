@@ -1,17 +1,18 @@
-import project1 from "./img/projects-1.jpg";
+import graphica from './img/graphica.png'
 import project2 from "./img/projects-2.jpg";
 import project3 from "./img/projects-3.jpg";
-import project4 from "./img/projects-4.jpg";
-import project5 from "./img/projects-5.jpg";
+import kkpublic from "./img/kkpublic.jpg";
+import easehub from "./img/easehub.jpg";
 import project6 from "./img/projects-6.jpg";
 
 export const data = {
     projects: [
         {
-            title: 'Health Forever',
-            subtitle: 'Client Project',
-            link: 'https://github.com/Rajat26599/HealthForever',
-            img: project1
+            title: 'Graphica',
+            subtitle: 'We create your designs',
+            link: 'https://graphica.onrender.com/',
+            img: graphica,
+            backgroundColor: 'rgb(255, 238, 238)'
         },
         {
             title: 'SilverCyber Blog',
@@ -26,16 +27,16 @@ export const data = {
             img: project3
         },
         {
-            title: 'Water Lever Indicator',
-            subtitle: 'Client Project',
-            link: 'https://drive.google.com/drive/folders/1VRwpv21r_FM3HZt0udXiKneiZ5BJeLEc?usp=sharing',
-            img: project4
+            title: 'K. K. Public School',
+            subtitle: 'School Website',
+            link: 'https://kkpublic.onrender.com/',
+            img: kkpublic
         },
         {
-            title: 'Corona Tracker 2.0',
-            subtitle: 'Client Project',
-            link: 'https://corona-track-status.netlify.app/',
-            img: project5
+            title: 'EaseHub',
+            subtitle: 'Make your work no-sweat',
+            link: 'https://easehub.onrender.com/',
+            img: easehub
         },
         {
             title: 'Get-Set-Note',

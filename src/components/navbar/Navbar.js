@@ -14,7 +14,7 @@ export const Navbar = () => {
 
     useEffect(() => {}, [screenWidth])
 
-    const handleBreadcrums = () => {
+    const handleBreadcrums = () => { 
         setShowCross(!showCross)
     }
 
@@ -23,12 +23,18 @@ export const Navbar = () => {
             <>
                 {                
                     data.navItems.map((item, index) => (
-                        <NavListItem key={index} expanded={showCross} onClick={() => handleBreadcrums()}>
+                        <NavListItem 
+                            key={index} 
+                            expanded={showCross} 
+                            onClick={() => {
+                                if(screenWidth <= parseInt(globalStylingSpecs.device.medium)) handleBreadcrums()
+                            }}
+                            >
                             <a href={item.link}>{upper(item.label)}</a>
                         </NavListItem>
                     ))
                 }
-                <a href='https://drive.google.com/file/d/19pesyNXeKUGFgzLjNcOHtbU5uxtPNung/view?usp=sharing' target='_blank' rel="noreferrer"><Button>Get Resume</Button></a>
+                <a href='https://docs.google.com/document/d/1aoJf-xcBA62D9WBWE3RnU0z6VWZljnS2GNSP88qWOdE/edit?usp=sharing' target='_blank' rel="noreferrer"><Button>Get Resume</Button></a>
             </>
         )
     }

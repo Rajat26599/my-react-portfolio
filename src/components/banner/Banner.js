@@ -1,28 +1,35 @@
-import { BannerWrapper, MyPic, MyPicWrapper, MyName, BannerContent } from "./styles"
-import myFormalPic from './../../assets/img/home-left-1.png'
+import { BannerWrapper, ButtonWrapper, SocialSitesContainer, Intro, WelcomeMessage } from "./styles"
 import '../../../node_modules/linearicons/dist/web-font/style.css'
 
-import { upper } from "../../util/common/helperFunctions"
 import { SocialSites } from "../common/socialSites/SocialSites"
-import { globalStylingSpecs } from "../../util/global/stylingSpecs"
 import { Button } from "../common/Button/Button"
+import Typewriter from 'typewriter-effect';
 
 export const Banner = () => {
     return (
         <BannerWrapper id='banner'>
-            <MyPicWrapper>
-                <MyPic src={myFormalPic}></MyPic>
-            </MyPicWrapper>
-            <BannerContent>
-                <h5>This is me</h5>
-                <MyName>{upper('Rajat Saxena')}</MyName>
-                <p><i className="lnr lnr-bug"></i> &nbsp;&nbsp;&nbsp;&nbsp; Full-stack Developer &nbsp;&nbsp;&nbsp;&nbsp; <i className="lnr lnr-pie-chart"></i> &nbsp;&nbsp;&nbsp;&nbsp; Graphic Designer &nbsp;&nbsp;&nbsp;&nbsp; <i className="lnr lnr-code"></i> &nbsp;&nbsp;&nbsp;&nbsp; Software Enthusiast</p>
-                <p><i className="lnr lnr-star"></i> &nbsp;&nbsp;&nbsp;&nbsp; Founder of CODE &nbsp;&nbsp;&nbsp;&nbsp; <i className="lnr lnr-briefcase"></i> &nbsp;&nbsp;&nbsp;&nbsp; ABA (UI Developer) at Infosys</p>
-                <Button>Discover Now</Button>
-                <div>
-                    <SocialSites iconColor={globalStylingSpecs.color.myGray} />
-                </div>
-            </BannerContent>
+            <WelcomeMessage>
+                <Typewriter
+                    onInit={(typewriter) => {
+                        typewriter.typeString('<div>Hi! I am&nbsp;<span style="color: gold;">Rajat Saxena</span></div>')
+                        .pauseFor(3500)
+                        .deleteAll()
+                        .start();
+                    }}
+                    options={{
+                        loop: true,
+                    }}
+                />
+            </WelcomeMessage>
+            <Intro>3+ years of passion about web development and leveraging cutting-edge <br /> technologies to create impactful solutions.</Intro>
+            <SocialSitesContainer>
+                <SocialSites iconColor={'white'} />
+            </SocialSitesContainer>
+            <ButtonWrapper>
+                <a href='#experience'>
+                    <Button>Discover Now</Button>
+                </a>
+            </ButtonWrapper>
         </BannerWrapper>
     )
 }

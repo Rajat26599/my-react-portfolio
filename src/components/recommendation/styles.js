@@ -23,7 +23,7 @@ export const RecommendationCard = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 45%;
+    width: 29%;
     background-color: white;
     padding: 1rem;
     border: 1px solid ${globalStylingSpecs.color.myLightGray};

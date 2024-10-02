@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { ComponentWrapper, globalStylingSpecs } from "../../util/global/stylingSpecs";
+import { fadeIn } from "../../util/animations/fadeIn";
 
 export const ExperienceWrapper = styled(ComponentWrapper)``
 
@@ -13,16 +14,27 @@ export const Body = styled.div`
 `
 
 export const ExperiencePanel = styled.ul`
-    width: 50%;
+    width: 100%;
     margin-block-start: 0;
+`
+export const ExperienceRowsWrapper = styled.div`
+    width: 100%;
+    display: flex;
+    margin-bottom: 1rem;
 
+    @media(max-width: ${globalStylingSpecs.device.small}) {
+        flex-direction: column;
+    }
+`
+export const ExperienceRows= styled.div`
+    display: flex;
+    width: 50%;
+    height: 100%;
+    margin-bottom: 1rem;
+    
     @media(max-width: ${globalStylingSpecs.device.small}) {
         width: 100%;
     }
-`
-export const ExperiencesRowWrapper = styled.div`
-    display: flex;
-    margin-bottom: 1rem;
 `
 export const ExperiencesRow = styled.li`
     display: flex;
@@ -84,11 +96,10 @@ export const ResponsibilitiesPanel = styled.div`
     border-color: ${globalStylingSpecs.color.myGray};
     border-radius: 0.5rem;
     padding: 1rem;
+    animation: ${fadeIn} 1s ease;
 
     @media(max-width: ${globalStylingSpecs.device.small}) {
         width: 100%;
-        margin-left: 40px;
-        margin-right: 30px;
     }
 `
 export const ResponsibilitiesItem = styled.div`

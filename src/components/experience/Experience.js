@@ -1,5 +1,5 @@
 import { Heading } from "../common/heading/Heading"
-import { Body, CompanyLogo, CompanyLogoWrapper, ResponsibilitiesItem, Duration, ExperienceContent, ExperiencePanel, ExperienceWrapper, ExperiencesRow, ProfileName, ResponsibilitiesPanel, RoleName, ExperiencesRowWrapper, ExperienceRowIconWrapper } from "./styles"
+import { Body, CompanyLogo, CompanyLogoWrapper, ResponsibilitiesItem, Duration, ExperienceContent, ExperiencePanel, ExperienceWrapper, ExperiencesRow, ProfileName, ResponsibilitiesPanel, RoleName, ExperienceRows, ExperienceRowsWrapper, ExperienceRowIconWrapper } from "./styles"
 import { data } from "./data"
 import { useState } from "react"
 import { Subheading } from "../common/subheading/Subheading"
@@ -14,32 +14,37 @@ export const Experience = () => {
 
     const getExperienceRow = (item, index) => {
         return (
-            <ExperiencesRowWrapper key={index}>
-                <ExperiencesRow active={selectedExperience===index} onClick={() => setSelectedExperience(index)}>
-                    <CompanyLogoWrapper>
-                        <CompanyLogo src={item.logo.url} width={item.logo.width} alt={item.logo.alt}></CompanyLogo>
-                    </CompanyLogoWrapper>
-                    <ExperienceContent>
-                        <RoleName>
-                            <ProfileName>{item.profileName}</ProfileName>
-                            {/* &nbsp; 
-                            <At>at</At> 
-                            &nbsp; 
-                            <CompanyName>{item.companyName}</CompanyName> */}
-                        </RoleName>
-                        <Duration>{item.duration}</Duration>
-                    </ExperienceContent>
-                </ExperiencesRow>
-                <ExperienceRowIconWrapper active={selectedExperience===index}>
-                    <FontAwesomeIcon icon={faAnglesRight} />
-                </ExperienceRowIconWrapper>
-            </ExperiencesRowWrapper>
+            <ExperienceRowsWrapper key={index}>
+                <ExperienceRows>
+                    <ExperiencesRow active={selectedExperience===index} onClick={() => setSelectedExperience(index)}>
+                        <CompanyLogoWrapper>
+                            <CompanyLogo src={item.logo.url} width={item.logo.width} alt={item.logo.alt}></CompanyLogo>
+                        </CompanyLogoWrapper>
+                        <ExperienceContent>
+                            <RoleName>
+                                <ProfileName>{item.profileName}</ProfileName>
+                                {/* &nbsp; 
+                                <At>at</At> 
+                                &nbsp; 
+                                <CompanyName>{item.companyName}</CompanyName> */}
+                            </RoleName>
+                            <Duration>{item.duration}</Duration>
+                        </ExperienceContent>
+                    </ExperiencesRow>
+                    <ExperienceRowIconWrapper active={selectedExperience===index}>
+                        <FontAwesomeIcon icon={faAnglesRight} />
+                    </ExperienceRowIconWrapper>
+                </ExperienceRows>
+                {selectedExperience === index && getResponsibilitiesPanel()}
+            </ExperienceRowsWrapper>
         )
     }
     
     const getResponsibilitiesPanel = () => {
         return (
-            <ResponsibilitiesPanel>
+            // by adding a key react will re-render ResponsibilitiesPanel when selectedExperience changes
+            // this let the fadeIn animation take effect otherwise it would have only happened once in the beginning
+            <ResponsibilitiesPanel key={selectedExperience}>
                 <Subheading>Roles</Subheading>
                 <ul>
                     {
@@ -63,11 +68,11 @@ export const Experience = () => {
                 <ExperiencePanel>
                     {
                         data.workExperiences.map((item, index) => (
-                            getExperienceRow(item, index)
+                            getExperienceRow(item, index) 
                         ))
                     }
                 </ExperiencePanel>
-                { (selectedExperience < data.workExperiences.length) && getResponsibilitiesPanel() }
+                
             </Body>
             
             <Spacer height={'4rem'}></Spacer>
@@ -81,7 +86,6 @@ export const Experience = () => {
                         ))
                     }
                 </ExperiencePanel>
-                { (selectedExperience >= data.workExperiences.length) && getResponsibilitiesPanel() }
             </Body>
         </ExperienceWrapper>
     )

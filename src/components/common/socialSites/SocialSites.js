@@ -4,15 +4,25 @@ import { IconList, IconListItem } from './styles'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { data } from './data'
+import { useState } from 'react'
 
 export const SocialSites = (props) => {
+    const [ mouseOver, setMouseOver ] = useState(false)
     return (
         <IconList justifyIcons={props.justifyIcons}>
             {
                 data.socialSites.map((item, index) => (
                     <IconListItem key={index}>
                         <a href={item.url}>
-                            <FontAwesomeIcon icon={item.icon} color={props.iconColor} size="1x" />
+                            <FontAwesomeIcon 
+                                title={item.platform}
+                                key={index}
+                                icon={item.icon} 
+                                color={ index === mouseOver ? item.onHoverColor : props.iconColor} 
+                                size="1x" 
+                                onMouseOver={() => setMouseOver(index)}
+                                onMouseLeave={() => setMouseOver(false)}
+                                />
                         </a>
                     </IconListItem>
                 ))
