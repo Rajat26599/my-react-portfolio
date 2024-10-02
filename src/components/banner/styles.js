@@ -34,7 +34,7 @@ export const WelcomeMessage = styled.p`
     div {
         display: inline-flex;
     }
-    
+
     @media(max-width: ${globalStylingSpecs.device.small}) {
         font-size: 2rem;
         height: 2.5rem;

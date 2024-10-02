@@ -28,10 +28,6 @@ export const globalStylingSpecs = {
     spacing: {
         pageMarginLarge: '5rem',
         pageMarginSmall: '1rem',
-    },
-    layers: {
-        B1: -1,
-        T1: 1,
     }
 }
 
