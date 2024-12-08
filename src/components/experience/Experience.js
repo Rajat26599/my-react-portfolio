@@ -1,5 +1,7 @@
 import { Heading } from "../common/heading/Heading"
-import { Body, CompanyLogo, CompanyLogoWrapper, ResponsibilitiesItem, Duration, ExperienceContent, ExperiencePanel, ExperienceWrapper, ExperiencesRow, ProfileName, ResponsibilitiesPanel, RoleName, ExperienceRows, ExperienceRowsWrapper, ExperienceRowIconWrapper } from "./styles"
+import { Body, CompanyLogo, CompanyLogoWrapper, ResponsibilitiesItem, Duration, ExperienceContent, ExperiencePanel, 
+    ExperienceWrapper, ExperiencesRow, ProfileName, ResponsibilitiesPanel, RoleName, ExperienceRows, ExperienceRowsWrapper, 
+    ExperienceRowIconWrapper, At } from "./styles"
 import { data } from "./data"
 import { useState } from "react"
 import { Subheading } from "../common/subheading/Subheading"
@@ -23,10 +25,10 @@ export const Experience = () => {
                         <ExperienceContent>
                             <RoleName>
                                 <ProfileName>{item.profileName}</ProfileName>
-                                {/* &nbsp; 
-                                <At>at</At> 
-                                &nbsp; 
-                                <CompanyName>{item.companyName}</CompanyName> */}
+                                <br /> 
+                                <At>{item.companyName}</At> 
+                                {/* &nbsp;  */}
+                                {/* <CompanyName>{item.companyName}</CompanyName> */}
                             </RoleName>
                             <Duration>{item.duration}</Duration>
                         </ExperienceContent>

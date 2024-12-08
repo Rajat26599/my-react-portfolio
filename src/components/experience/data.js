@@ -9,19 +9,20 @@ export const data = {
         {
           logo: {url: infosysLogo, width: 80},
           alt: "Infosys logo",
-          profileName: "Associate Business Analyst (UI Developer)",
+          profileName: "Associate Consultant (Developer)",
           companyName: "Infosys",
           duration: "Nov-2022 to Present",
           responsibilities: [
-            "Creating UI screens using React.js, React-Native, Bootstrap, Styled Comp & Android Studio.",
-            "Managing state using Redux and APIs using Axios.",
-            "Version Control using git and bitbucket.",
-            "Writing unit test cases using Jest and React Testing Library.",
-            "Following Agile methodology and project management using Jira."
+            "Engineered UI screens using React.js, React-Native, Bootstrap, Styled Comp & Android Studio.",
+            "Managing state using Redux, Saga  and APIs handling using Axios.",
+            "Backend and API development using Java / Spring boot.",
+            "Version control using git and bitbucket. Accessibility enhancement using JAWS & NVDA.",
+            "Writing unit test cases using Jest and React Testing Library. ",
+            "Following Agile methodology and project management using Jira.",
           ]
         },
         {
-          logo: {url: tcsLogo, width: 100},
+          logo: {url: tcsLogo, width: 80},
           alt: "TCS logo",
           profileName: "Assistant System Engineer",
           companyName: "TCS",
@@ -51,7 +52,7 @@ export const data = {
           ]
         },
         {
-          logo: {url: ksyLogo, width: 100},
+          logo: {url: ksyLogo, width: 80},
           alt: "KSY logo",
           profileName: "Web-Developer Intern",
           companyName: "Khushi Se Yoga, Navi Mumbai",
@@ -63,7 +64,7 @@ export const data = {
           ]
         },
         {
-          logo: {url: cetpaLogo, width: 100},
+          logo: {url: cetpaLogo, width: 80},
           alt: "CETPA logo",
           profileName: "Python Programmer Trainee",
           companyName: "Cetpa InfoTech Pvt Ltd, Lucknow",
