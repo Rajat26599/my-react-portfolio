@@ -45,9 +45,13 @@ export const ExperiencesRow = styled.li`
     border-color: ${(props) => props.active ? globalStylingSpecs.color.myBlue : globalStylingSpecs.color.myLightGray};
     border-radius: 0.5rem;
     cursor: pointer;
-
+    
     &:hover {
         border-color: ${globalStylingSpecs.color.myBlue};
+    }
+    
+    @media(max-width: ${globalStylingSpecs.device.small}) {
+        flex-direction: column;
     }
 `
 export const ExperienceRowIconWrapper = styled.div`
@@ -73,17 +77,19 @@ export const ExperienceContent = styled.div`
 `
 export const RoleName = styled.p`
     font-weight: 700;
+    margin-block-start: 0;
 `
 export const ProfileName = styled.span`
     font-size: 1.2rem;
 `
-// export const At = styled.span`
-//     font-size: 0.9rem;
-// `
-// export const CompanyName = styled.span`
-//     color: ${globalStylingSpecs.color.myBlue};
-//     font-size: 1.2rem;
-// `
+export const At = styled.span`
+    font-size: 0.9rem;
+    color: ${globalStylingSpecs.color.myGray};
+`
+export const CompanyName = styled.span`
+    color: ${globalStylingSpecs.color.myBlue};
+    font-size: 1.2rem;
+`
 export const Duration = styled.div`
     font-weight: 700;
     color: ${globalStylingSpecs.color.myGray};
@@ -99,7 +105,7 @@ export const ResponsibilitiesPanel = styled.div`
     animation: ${fadeIn} 1s ease;
 
     @media(max-width: ${globalStylingSpecs.device.small}) {
-        width: 100%;
+        width: calc(100% - 4rem);
     }
 `
 export const ResponsibilitiesItem = styled.div`

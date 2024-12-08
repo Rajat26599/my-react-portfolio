@@ -1,5 +1,6 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { ComponentWrapper, globalStylingSpecs } from "../../util/global/stylingSpecs";
+import { fadeIn } from "../../util/animations/fadeIn";
 
 export const AboutWrapper = styled(ComponentWrapper)``
 
@@ -9,19 +10,30 @@ export const CardsWrapper = styled.div`
     width: 100%;
     justify-content: space-between;
 `
-export const AboutCard = styled.div`
+export const AboutCard = styled.a`
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 20%;
-    border: 1px solid ${globalStylingSpecs.color.myLightGray};
     border-radius: 1rem;
     padding: 1rem;
-
-    &:hover {
-        border-color: ${globalStylingSpecs.color.myBlue};
-    }
-
+    border: 1px solid ${globalStylingSpecs.color.myLightGray};
+    
+    ${props => props.hasurl && css`
+        cursor: pointer;
+        text-decoration: none;
+        &:hover {
+            background-image: url(${props.bgimg});
+            background-size: cover;
+            background-position: center;
+            transition: background 0.5s;
+            animation: ${fadeIn} 0.5s ease;
+        }
+        &:hover > * {
+            visibility: hidden;
+        }
+    `}
+            
     @media(max-width: ${globalStylingSpecs.device.small}) {
         width: 40%;
     }
@@ -31,6 +43,7 @@ export const AboutCardIcon = styled.i`
     color: ${globalStylingSpecs.color.myBlue};
 `
 export const Number = styled.p`
+    color: ${globalStylingSpecs.color.myBlack};
     font-size: 1.5rem;
     font-weight: 700;
     margin-block-start: 0.5em;
@@ -42,11 +55,26 @@ export const AboutCardContent = styled.p`
     margin-block-end: 0;
     text-align: center;
 `
-export const Progressbars = styled.ul`
-    width: 50%;
+export const SkillsContainer = styled.div`
+    display: flex;
 
     @media(max-width: ${globalStylingSpecs.device.small}) {
-        width: 80%;
+        display: block;
+    }
+`
+export const TechIcon = styled.img`
+    vertical-align: top;
+    margin-right: 5px;
+`
+export const TechNameSpan = styled.span`
+    margin-right: 5px;
+`
+export const Progressbars = styled.ul`
+    width: 40%;
+    padding-inline-start: 0;
+
+    @media(max-width: ${globalStylingSpecs.device.small}) {
+        width: 100%;
     }
 `
 
